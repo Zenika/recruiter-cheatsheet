@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheatsheet Recrutement Profils IA - Édition Augmentée</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E60028;
+            --primary-light: #fff0f2;
+            --dark: #0F172A;
+            --grey-dark: #64748B;
+            --grey-mid: #94A3B8;
+            --grey-light: #F8FAFC;
+            --border: #E2E8F0;
+            --accent-blue: #3B5BDB;
+            --accent-blue-light: #EEF2FF;
+            --accent-teal: #0D9488;
+            --accent-teal-light: #F0FDFA;
+            --accent-violet: #7C3AED;
+            --accent-violet-light: #F5F3FF;
+            --accent-amber: #D97706;
+            --accent-amber-light: #FFFBEB;
+            --white: #ffffff;
+            --shadow: 0 1px 4px rgba(15,23,42,0.07);
+            --shadow-md: 0 2px 10px rgba(15,23,42,0.09);
+        }
+
+        @page {
+            size: 210mm auto;
+            margin: 8mm;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.55;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        /* ── HEADER ── */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--dark);
+            color: white;
+            border-radius: 10px;
+            padding: 20px 28px;
+            margin-bottom: 14px;
+        }
+
+        .title-area h1 {
+            font-size: 24px;
+            color: #ffffff;
+            margin: 0 0 2px 0;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+        }
+
+        .title-area h1 span {
+            color: var(--primary);
+        }
+
+        .title-area p {
+            font-size: 13px;
+            color: var(--grey-mid);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .meta-badge {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        /* ── GRID ── */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            background-color: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            box-shadow: var(--shadow);
+            break-inside: avoid;
+        }
+
+        section.accent {
+            border-top: 3px solid var(--primary);
+        }
+
+        section.accent-blue {
+            border-top: 3px solid var(--accent-blue);
+        }
+
+        h2 {
+            font-size: 11px;
+            color: var(--grey-dark);
+            margin-top: 0;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+        }
+
+        h3 {
+            font-size: 14px;
+            color: var(--dark);
+            margin: 6px 0 2px 0;
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 13px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #334155;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* ── PROFILE CARDS ── */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .profile-card {
+            background: var(--grey-light);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 8px 10px;
+        }
+
+        .profile-header {
+            font-weight: 700;
+            font-size: 12px;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            display: inline-block;
+            letter-spacing: 0.2px;
+        }
+
+        .profile-header.role-1 { background-color: var(--accent-blue); }
+        .profile-header.role-2 { background-color: var(--accent-violet); }
+        .profile-header.role-3 { background-color: var(--accent-teal); }
+        .profile-header.role-4 { background-color: var(--accent-amber); }
+
+        .profile-card em {
+            display: block;
+            color: var(--grey-dark);
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        /* ── RED FLAGS ── */
+        .red-flag-item {
+            background: var(--primary-light);
+            border-left: 3px solid var(--primary);
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .red-flag-item:last-child { margin-bottom: 0; }
+
+        /* ── QUESTION BOXES ── */
+        .question-box {
+            background: var(--grey-light);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-blue);
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .question-box:last-child { margin-bottom: 0; }
+
+        .question-box em {
+            color: var(--accent-blue);
+            font-style: italic;
+        }
+
+        /* ── GLOSSARY ── */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .glossary-family {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .family-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+
+        .family-label.blue   { background: var(--accent-blue);   color: #fff; }
+        .family-label.teal   { background: var(--accent-teal);   color: #fff; }
+        .family-label.violet { background: var(--accent-violet); color: #fff; }
+
+        .glossary-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 3px solid currentColor;
+            border-radius: 0 6px 6px 0;
+            padding: 6px 8px;
+            flex: 1;
+        }
+
+        .glossary-family.blue   .glossary-item { border-left-color: var(--accent-blue);   background: var(--accent-blue-light); }
+        .glossary-family.teal   .glossary-item { border-left-color: var(--accent-teal);   background: var(--accent-teal-light); }
+        .glossary-family.violet .glossary-item { border-left-color: var(--accent-violet); background: var(--accent-violet-light); }
+
+        .glossary-item strong {
+            display: block;
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .glossary-item span {
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="display:flex; align-items:center; gap:12px;">
+            <svg width="52" height="52" id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 455.4 455.41"><defs><style>.cls-1{fill:url(#Dégradé_sans_nom_48);}.cls-2{fill:#fff;}</style><linearGradient id="Dégradé_sans_nom_48" x1="161.56" y1="389.71" x2="616.96" y2="389.71" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fb1626"/><stop offset="1" stop-color="#bb0d5a"/></linearGradient></defs><path class="cls-1" d="M617,389.7q0,8.66-.63,17.13a226.5,226.5,0,0,1-12.3,58.7C572.79,554,488.43,617.41,389.26,617.41c-125.76,0-227.7-101.95-227.7-227.71,0-5.6.21-11.16.6-16.67,0-.33.05-.67.08-1a226.5,226.5,0,0,1,11.52-56l.81-2.33C205.86,225.3,290.18,162,389.26,162,515,162,617,264,617,389.7Z" transform="translate(-161.56 -162)"/><path class="cls-2" d="M616.33,406.83a226.5,226.5,0,0,1-12.3,58.7l-283,51.57-6,1.09a33.82,33.82,0,0,1-6.11.57,29.89,29.89,0,0,1-5.57-.52h-.07a35.58,35.58,0,0,1-18.38-9.66,35.18,35.18,0,0,1-7.22-39.82,37.24,37.24,0,0,1,2.9-5.11l0,0,0,0,138-138L162.54,372l-.3,0a226.5,226.5,0,0,1,11.52-56l.81-2.33,292.68-53.41,8.64-1.56a28.75,28.75,0,0,1,10-.05,35.87,35.87,0,0,1,28.91,28.71,35.64,35.64,0,0,1-9.44,31.11l0,0-1.35,1.35-133,131.72Z" transform="translate(-161.56 -162)"/></svg>
+            <div class="title-area">
+                <h1>Recrutement Tech IA</h1>
+            </div>
+        </div>
+        <div class="meta-badge">Zenika 2026</div>
+    </header>
+
+    <div class="grid">
+        
+        <section class="accent">
+            <h2>1. Le Socle Technique &amp; Paradigmes</h2>
+            <ul>
+                <li><strong>Le piège du CV :</strong> Savoir écrire des prompts sur ChatGPT ne fait pas un ingénieur. Priorisez l'intégration technique et l'orchestration logicielle (APIs, RAG, frameworks).</li>
+                <li><strong>Le socle traditionnel reste roi :</strong> Une excellente brique GenAI repose systématiquement sur de solides fondations en Développement Software ou en Data Science classique.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. Le Mindset de l'Ingénieur IA</h2>
+            <ul>
+                <li><strong>Limites du non-déterminisme :</strong> Le candidat doit comprendre intimement que l'IA ne "raisonne" pas mais prédit probabilistiquement. Il doit comprendre la notion d'hallucinations et de fenêtre de contexte.</li>
+                <li><strong>Changement de paradigme :</strong> L'IA générant du code ou des comportements à la volée, la mise en place de tests unitaires, sémantiques et de documentation stricte devient le livrable de production le plus critique.</li>
+                <li><strong>Sécurité, RGPD et Fuites :</strong> Sensibilité native à la gouvernance de la donnée (exfiltration via prompt injection, fuites de données d'entreprise dans les logs d'APIs tierces).</li>
+                <li><strong>Sensibilité fine aux coûts :</strong> Conscience aiguë de la consommation des tokens et de l'impact financier d'un routage d'API inadapté.</li>
+            </ul>
+        </section>
+
+        <section class="full-width">
+            <h2>3. Cartographie des Profils Cibles (Hard &amp; Soft Skills)</h2>
+            
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <div class="profile-header role-1">1. Software Engineer AI</div>
+                    <p style="margin:0 0 4px 0;"><em>Intègre des briques d'intelligence au sein d'architectures classiques.</em></p>
+                    <ul>
+                        <li><strong>Hard :</strong> Python, TypeScript, LangChain, LlamaIndex, CrewAI. Maîtrise des DB Vectorielles (Pinecone, Qdrant, PGVector) et du prompting avancé (Few-shot, Chain-of-Thought).</li>
+                        <li><strong>Soft :</strong> Fort pragmatisme de livraison, culture "Solution-oriented", veille active.</li>
+                    </ul>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-header role-2">2. Architecte GenAI &amp; Agentique</div>
+                    <p style="margin:0 0 4px 0;"><em>Conçoit des écosystèmes multi-agents autonomes et des pipelines RAG avancés.</em></p>
+                    <ul>
+                        <li><strong>Hard :</strong> RAG avancés (Advanced Chunking, Re-ranking), Frameworks de graphes (LangGraph, AutoGen), Guardrails de sécurité, Fine-tuning (LoRA, QLoRA), Métriques d'évaluation (LLM-as-a-judge).</li>
+                        <li><strong>Soft :</strong> Vision systémique globale, forte capacité de vulgarisation Tech-to-Biz.</li>
+                    </ul>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-header role-3">3. MLOps / LLMOps</div>
+                    <p style="margin:0 0 4px 0;"><em>Garantit l'industrialisation, la scalabilité et l'observabilité des modèles.</em></p>
+                    <ul>
+                        <li><strong>Hard :</strong> Docker, Kubernetes, CI/CD, Cloud, Plateformes de monitoring LLM (LangSmith, MLflow, Arize Phoenix), Passerelles LLM (LiteLLM, KongAI).</li>
+                        <li><strong>Soft :</strong> Culture de la stabilité des infrastructures, obsession de la détection précoce des dérives (Drift), notamment financières.</li>
+                    </ul>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-header role-4">4. Le Développeur Assisté / Augmenté</div>
+                    <p style="margin:0 0 4px 0;"><em>Multiplie sa vélocité de delivery tout en conservant une parfaite maîtrise technique.</em></p>
+                    <ul>
+                        <li><strong>Hard :</strong> Stack logicielle d'ingénierie classique robuste (Java, Go, JS), Maîtrise avancée des assistants (GitHub Copilot, Cursor, Claude Code).</li>
+                        <li><strong>Soft :</strong> Posture rigoureuse de relecture critique ("Human-in-the-loop"), refus du copier-coller aveugle. Maitrise parfaire de la chaine de tests.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="accent">
+            <h2>4. Les Red Flags Absolus en Entretien</h2>
+            <div class="red-flag-item">
+                <strong>Le "Prompt Engineer" de surface :</strong> Prétend posséder une expertise en GenAI uniquement car il sait manipuler l'interface utilisateur de ChatGPT, mais ne dispose d'aucun socle en programmation (incapable d'écrire un script de nettoyage de données).
+            </div>
+            <div class="red-flag-item">
+                <strong>Le Syndrome du Marteau (Over-engineering) :</strong> Souhaite implémenter un LLM coûteux, lent et énergivore pour résoudre un problème algorithmique simple qui aurait pu être traité de manière déterministe avec un algorythme simple.
+            </div>
+            <div class="red-flag-item">
+                <strong>Confiance aveugle / Démission technique :</strong> Utilise Cursor ou Copilot de manière totalement passive. Incapable d'expliquer l'architecture logicielle générée, de repérer les failles de sécurité induites ou de justifier la logique des tests associés.
+            </div>
+            <div class="red-flag-item">
+                <strong>Naïveté sécuritaire totale :</strong> Ne sait pas ce qu'est une "Prompt Injection" ni comment sécuriser les accès aux outils (tools) d'un agent autonome. Un danger direct pour la sécurité des données de l'entreprise.
+            </div>
+            <div class="red-flag-item">
+                <strong>L'Éternel POC :</strong> Accumule les expérimentations et les certifications, mais est incapable de citer un seul livrable concret mis en production, utilisé par de vrais utilisateurs, avec un impact mesurable.
+            </div>
+            <div class="red-flag-item">
+                <strong>Le Déresponsabilisé :</strong> Face à une erreur ou un résultat incorrect du modèle, sa réponse par défaut est "c'est l'IA qui a halluciné". N'a jamais mis en place de garde-fous ni de validation humaine. Délègue sa responsabilité technique au modèle.
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Questions Clés &amp; Mises en Situation</h2>
+            
+            <div class="question-box">
+                <strong>1. Alignement &amp; Veille :</strong> <em>"Quelle est la dernière nouveauté en IA générative qui t'a marqué, et qu'as-tu découvert en la testant concrètement ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Curiosité active, analyse objective des limites découvertes lors de la manipulation ("test & learn").</span>
+            </div>
+
+            <div class="question-box">
+                <strong>2. Confrontation au réel :</strong> <em>"Raconte-moi un projet ou un POC d'application IA qui a échoué ou créé une forte frustration, et pourquoi ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Recul critique, honnêteté, gestion pratique des problématiques de coûts, de latence ou d'hallucinations.</span>
+            </div>
+
+            <div class="question-box">
+                <strong>3. Arbitrage Archi :</strong> <em>"Comment tranches-tu entre l'utilisation d'une API propriétaire (OpenAI) et le déploiement d'un modèle open-source (Mistral, Llama) ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Approche pragmatique balançant souveraineté/confidentialité des données, coûts d'infrastructure et latence d'inférence.</span>
+            </div>
+
+            <div class="question-box">
+                <strong>4. Validation continue :</strong> <em>"Quelle est ta méthode stricte pour valider les modifications d'un prompt ou d'un modèle avant sa mise en production ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Esprit critique, mise en place d'un dataset d'évaluation de référence, tests de non-régression sémantique.</span>
+            </div>
+
+            <div class="question-box">
+                <strong>5. Du POC à la prod :</strong> <em>"Décris le chemin entre ton prototype et la mise en production réelle. Qu'est-ce qui t'a surpris ou bloqué ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Expérience concrète des frictions réelles (données, sécurité, performance, adoption utilisateur).</span>
+            </div>
+
+            <div class="question-box">
+                <strong>6. Conscience des coûts :</strong> <em>"Sur un projet récent, comment as-tu justifié le budget IA auprès du client ou de ta hiérarchie ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Capacité à relier les choix techniques à des euros. Détecte le candidat qui ne pense jamais ROI.</span>
+            </div>
+
+            <div class="question-box">
+                <strong>7. Collaboration non-tech :</strong> <em>"Comment travailles-tu avec des équipes qui ne comprennent pas l'IA pour définir ce qu'un bon résultat signifie ?"</em>
+                <br><span style="color:var(--grey-dark);">Attendu : Empathie, pédagogie, capacité à co-construire des critères de succès avec le métier.</span>
+            </div>
+
+        </section>
+
+        <section class="full-width">
+            <h2>Glossaire des Concepts Clés</h2>
+            <div class="glossary-grid">
+
+                <div class="glossary-family blue">
+                    <span class="family-label blue">Les Fondamentaux</span>
+                    <div class="glossary-item"><strong>IA Classique (Analytique)</strong><span>Analyse l'existant, discrimine et classifie pour prédire via des modèles statistiques structurés (ex : détection de fraude, scoring).</span></div>
+                    <div class="glossary-item"><strong>IA Générative (Créative)</strong><span>Crée de la nouveauté textuelle, visuelle ou applicative en modélisant des distributions de données massives.</span></div>
+                    <div class="glossary-item"><strong>NLP (Natural Language Processing)</strong><span>Ensemble des techniques permettant à une machine de comprendre, analyser et générer du langage humain.</span></div>
+                    <div class="glossary-item"><strong>LLM (Large Language Model)</strong><span>Modèle de langage entraîné sur des volumes massifs de texte, capable de générer du contenu, répondre à des questions ou écrire du code (ex : GPT-4, Claude, Mistral).</span></div>
+                </div>
+
+                <div class="glossary-family teal">
+                    <span class="family-label teal">Architectures &amp; Risques</span>
+                    <div class="glossary-item"><strong>Hallucination</strong><span>Comportement d'un LLM qui produit une réponse fausse ou inventée avec une apparente confiance. Risque majeur en production sans système de validation.</span></div>
+                    <div class="glossary-item"><strong>RAG (Retrieval-Augmented Generation)</strong><span>Architecture combinant une base de connaissance métier et un LLM : on récupère les documents pertinents avant de générer la réponse, pour la fiabiliser.</span></div>
+                    <div class="glossary-item"><strong>Agentique</strong><span>Paradigme où un LLM prend des décisions en autonomie, utilise des outils (recherche web, code, APIs) et enchaîne des actions pour atteindre un objectif.</span></div>
+                    <div class="glossary-item"><strong>Prompt Engineering</strong><span>Art de formuler les instructions données à un LLM pour obtenir des réponses précises, fiables et adaptées. Compétence nécessaire mais non suffisante.</span></div>
+                </div>
+
+                <div class="glossary-family violet">
+                    <span class="family-label violet">Pratiques &amp; Méthodes</span>
+                    <div class="glossary-item"><strong>Fine-tuning</strong><span>Ré-entraînement d'un modèle existant sur des données spécifiques à un domaine pour spécialiser son comportement et améliorer sa précision métier.</span></div>
+                    <div class="glossary-item"><strong>SDD (Spec-Driven Development)</strong><span>Méthode de développement où l'on rédige d'abord une spécification détaillée, que l'IA utilise ensuite pour générer du code de manière structurée et prévisible.</span></div>
+                    <div class="glossary-item"><strong>AIDD (AI-Driven Development)</strong><span>Approche de développement logiciel où l'IA est un partenaire actif du cycle de production : génération de code, tests, documentation et revue assistés par des outils comme Copilot ou Cursor.</span></div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</div>
+
+</body>
+</html>
+
